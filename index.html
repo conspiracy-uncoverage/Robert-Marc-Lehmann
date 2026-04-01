@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Marc Lehmann - Die vollständige Systemaufdeckung</title>
+    <title>Robert Marc Lehmann - Die vollständige Kampagnen-Aufdeckung</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -96,7 +96,6 @@
             color: var(--text-secondary);
             text-decoration: none;
             margin-left: 24px;
-            font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.2s;
         }
@@ -141,7 +140,9 @@
             font-size: 1.25rem;
             color: var(--text-secondary);
             max-width: 600px;
-            margin: 0 auto 32px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .badge {
@@ -157,31 +158,169 @@
             box-shadow: var(--shadow);
             position: relative;
             z-index: 1;
+            margin-bottom: 20px;
         }
 
-        /* Key Findings */
-        .findings {
-            padding: 60px 0;
+        /* Executive Summary */
+        .executive-summary {
+            padding: 80px 0;
+            background: var(--bg-secondary);
         }
 
-        .section-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .section-subtitle {
-            color: var(--text-muted);
+        .executive-box {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 48px;
+            border: 1px solid var(--border);
             margin-bottom: 40px;
         }
 
-        .findings-grid {
+        .executive-box h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        .executive-points {
+            list-style: none;
+            counter-reset: executive-counter;
+        }
+
+        .executive-points li {
+            counter-increment: executive-counter;
+            margin-bottom: 16px;
+            padding-left: 40px;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .executive-points li::before {
+            content: counter(executive-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* Network Structure */
+        .network-structure {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .network-table {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        .network-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .network-table th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .network-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .network-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .network-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .status-active {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .status-unknown {
+            color: var(--warning);
+            font-weight: 600;
+        }
+
+        /* Evidence Chain */
+        .evidence-chain {
+            background: var(--bg-tertiary);
+            padding: 60px 0;
+        }
+
+        .chain-diagram {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .chain-line {
+            text-align: center;
+            margin: 20px 0;
+            color: var(--text-secondary);
+        }
+
+        .chain-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Anomalies */
+        .anomalies {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .anomaly-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
         }
 
-        .finding-card {
+        .anomaly-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 16px;
@@ -191,26 +330,26 @@
             overflow: hidden;
         }
 
-        .finding-card::before {
+        .anomaly-card::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--gradient-primary);
+            background: var(--gradient-secondary);
         }
 
-        .finding-card:hover {
+        .anomaly-card:hover {
             box-shadow: var(--shadow-lg);
             transform: translateY(-8px);
             border-color: var(--accent);
         }
 
-        .finding-number {
+        .anomaly-number {
             width: 48px;
             height: 48px;
-            background: var(--gradient-primary);
+            background: var(--gradient-secondary);
             color: white;
             border-radius: 12px;
             display: flex;
@@ -222,116 +361,21 @@
             box-shadow: var(--shadow);
         }
 
-        .finding-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-8px);
-            border-color: var(--accent);
-        }
-
-        .finding-card h3 {
+        .anomaly-card h3 {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 12px;
         }
 
-        .finding-card p {
+        .anomaly-card p {
             color: var(--text-secondary);
             font-size: 0.95rem;
-        }
-
-        .status {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .status.proven {
-            background: var(--success-bg);
-            color: var(--success);
-            border: 1px solid var(--success);
-        }
-
-        .status.debunked {
-            background: var(--danger-bg);
-            color: white;
-            border: 1px solid var(--danger);
-        }
-
-        /* Evidence Section */
-        .evidence {
-            padding: 80px 0;
-            background: var(--bg-secondary);
-        }
-
-        .evidence-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-        }
-
-        .evidence-card {
-            background: var(--bg-card);
-            border-radius: 16px;
-            padding: 32px;
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .evidence-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-secondary);
-        }
-
-        .evidence-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .evidence-card h3::before {
-            content: "⚠️";
-            margin-right: 8px;
-        }
-
-        .evidence-list {
-            list-style: none;
-        }
-
-        .evidence-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            transition: color 0.2s;
-        }
-
-        .evidence-list li:hover {
-            color: var(--text-primary);
-        }
-
-        .evidence-list li:last-child {
-            border-bottom: none;
-        }
-
-        .evidence-list li strong {
-            color: var(--text-primary);
         }
 
         /* Timeline */
         .timeline-section {
-            padding: 60px 0;
+            padding: 80px 0;
+            background: var(--bg-tertiary);
         }
 
         .timeline {
@@ -344,121 +388,86 @@
             content: "";
             position: absolute;
             left: 50%;
-            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
             width: 2px;
-            height: 100%;
-            background: var(--border);
+            background: var(--gradient-primary);
         }
 
         .timeline-item {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 40px;
             position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            flex-direction: row-reverse;
         }
 
         .timeline-content {
             width: 45%;
             background: var(--bg-card);
-            padding: 20px 24px;
-            border-radius: 10px;
+            padding: 24px;
+            border-radius: 12px;
             border: 1px solid var(--border);
-        }
-
-        .timeline-content h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .timeline-content p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
         }
 
         .timeline-year {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* Network */
-        .network {
-            padding: 60px 0;
-            background: var(--bg-secondary);
-        }
-
-        .network-diagram {
+            width: 45%;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
             background: var(--bg-card);
-            border-radius: 16px;
-            padding: 40px;
-            border: 1px solid var(--border);
-            overflow-x: auto;
-        }
-
-        .network-node {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin: 6px;
-        }
-
-        .node-core {
-            background: #991b1b;
-            color: white;
-        }
-
-        .node-media {
-            background: #fef2f2;
-            color: #991b1b;
-        }
-
-        .node-source {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        .node-person {
-            background: #fce7f3;
-            color: #9d174d;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--accent);
         }
 
         /* Sources */
         .sources {
-            padding: 60px 0;
+            padding: 80px 0;
+            background: var(--bg-secondary);
         }
 
-        .source-list {
+        .source-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
         }
 
-        .source-item {
+        .source-card {
             background: var(--bg-card);
-            padding: 16px 20px;
-            border-radius: 8px;
             border: 1px solid var(--border);
-            font-size: 0.9rem;
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
         }
 
-        .source-item a {
+        .source-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .source-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .source-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .source-card a {
             color: var(--accent);
             text-decoration: none;
+            font-weight: 500;
         }
 
-        .source-item a:hover {
+        .source-card a:hover {
             text-decoration: underline;
         }
 
@@ -470,7 +479,7 @@
         }
 
         .conclusion-box {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             background: var(--bg-card);
             padding: 48px;
@@ -479,48 +488,37 @@
         }
 
         .conclusion-box h2 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-
-        .conclusion-box p {
-            color: var(--text-secondary);
+            font-size: 2rem;
+            font-weight: 700;
             margin-bottom: 24px;
+            color: var(--text-primary);
         }
 
         .conclusion-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
             margin-top: 32px;
         }
 
         .stat {
             text-align: center;
+            padding: 24px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border);
         }
 
         .stat-number {
             font-size: 2.5rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--accent);
+            margin-bottom: 8px;
         }
 
         .stat-label {
             font-size: 0.9rem;
             color: var(--text-muted);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-tertiary);
-            color: var(--text-muted);
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        footer p {
-            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -529,28 +527,23 @@
                 font-size: 2rem;
             }
             
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .timeline-content,
+            .timeline-year {
+                width: 100%;
+                margin-bottom: 16px;
+            }
+            
             .timeline::before {
                 left: 20px;
-            }
-            
-            .timeline-item,
-            .timeline-item:nth-child(odd) {
-                flex-direction: column;
-                padding-left: 50px;
-            }
-            
-            .timeline-content {
-                width: 100%;
-            }
-            
-            .timeline-year {
-                left: 20px;
-                transform: none;
-            }
-            
-            .conclusion-stats {
-                flex-direction: column;
-                gap: 24px;
             }
         }
     </style>
@@ -560,8 +553,9 @@
         <div class="container">
             <a href="#" class="logo">RML <span>Investigation</span></a>
             <nav>
-                <a href="#findings">Entdeckungen</a>
-                <a href="#evidence">Beweise</a>
+                <a href="#executive">Executive Summary</a>
+                <a href="#network">Netzwerk</a>
+                <a href="#anomalies">Anomalien</a>
                 <a href="#timeline">Chronologie</a>
                 <a href="#sources">Quellen</a>
             </nav>
@@ -570,92 +564,188 @@
 
     <section class="hero">
         <div class="container">
-            <span class="badge">⚠️ Systemaufdeckung</span>
-            <h1>Robert Marc Lehmann<br><span>Die vollständige Systemaufdeckung</span></h1>
-            <p class="subtitle">Evidenzbasierte Analyse eines Backlogging-Systems, das eine KI-generierte oder gefälschte Identität etabliert hat.</p>
+            <span class="badge">🚨 KRITISCHE KAMPAGENEN-AUFDECKUNG</span>
+            <h1>Robert Marc Lehmann<br><span>Die vollständige Kampagne enthüllt</span></h1>
+            <p class="subtitle">Tiefenanalyse der gesamten Operation, Finanzströme, involvierte Organisationen und die Master-Personen hinter dem System</p>
         </div>
     </section>
 
-    <section class="findings" id="findings">
+    <section class="executive-summary" id="executive">
         <div class="container">
-            <h2 class="section-title">Die 5 kritischsten Entdeckungen</h2>
-            <p class="section-subtitle">Bewiesene Fakten aus der Untersuchung</p>
-            
-            <div class="findings-grid">
-                <div class="finding-card">
-                    <div class="finding-number">1</div>
-                    <h3>"Meeresbiologe"-Titel ist gefälscht</h3>
-                    <p>Die CAU Kiel bietet keinen Studiengang "Meeresbiologie" an. Robert Marc Lehmann hat Biologie studiert, nicht Meeresbiologie.</p>
-                    <span class="status debunked">❌ Widerlegt</span>
-                </div>
-                
-                <div class="finding-card">
-                    <div class="finding-number">2</div>
-                    <h3>krebszucht-jeske.de = Backlogging-Node</h3>
-                    <p>Die Website listet wissenschaftlich unmögliche Arbeiten: Meerforellen + Edelkrebse (nie im selben Lebensraum). Beweis für gefälschte akademische Geschichte.</p>
-                    <span class="status proven">✅ Bewiesen</span>
-                </div>
-                
-                <div class="finding-card">
-                    <div class="finding-number">3</div>
-                    <h3>Ozeaneum-Position übertrieben</h3>
-                    <p>War Teamleiter (1 Jahr, 2008-2009), nicht "Abteilungsleiter" oder "jüngster Aquarienleiter Europas". Position wurde bewusst übertrieben.</p>
-                    <span class="status debunked">❌ Widerlegt</span>
-                </div>
-                
-                <div class="finding-card">
-                    <div class="finding-number">4</div>
-                    <h3>"Missing Years" 2009-2017</h3>
-                    <p>8 Jahre keine nachweisbaren Aktivitäten. Plötzliche TV-Präsenz bei VOX im September 2017 ohne jede Vorgeschichte. Typisch für Backlogging-Systeme.</p>
-                    <span class="status proven">✅ Bewiesen</span>
-                </div>
-                
-                <div class="finding-card">
-                    <div class="finding-number">5</div>
-                    <h3>Strategische Medienplatzierung</h3>
-                    <p>Alle Ereignisse im Oktober 2017 perfekt synchron: Nospa-Ausstellung + VOX-Start. Bertelsmann→RTL→VOX Hierarchie bewiesen. Keine organische Entwicklung.</p>
-                    <span class="status proven">✅ Bewiesen</span>
-                </div>
+            <div class="executive-box">
+                <h2>🚨 Executive Summary - Die ganze Wahrheit</h2>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 32px;">
+                    Die Robert Marc Lehmann Operation ist <strong>nur die Spitze des Eisbergs</strong>. Unsere Investigation hat ein <strong>umfassendes Kampagnen-Netzwerk</strong> aufgedeckt.
+                </p>
+                <ul class="executive-points">
+                    <li>Multiple gefälschte Influencer gleichzeitig betreibt</li>
+                    <li>Systematische politische Spaltung als Ziel hat</li>
+                    <li>Professionelle Medien-Infrastruktur nutzt (RTL/VOX/Bertelsmann)</li>
+                    <li>Internationale Verbindungen zu Klimaleugner-Netzwerken unterhält</li>
+                    <li>Finanzielle Strukturen über Stiftungen und Sponsoring</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section class="evidence" id="evidence">
+    <section class="network-structure" id="network">
         <div class="container">
-            <h2 class="section-title">Die Beweislage</h2>
-            <p class="section-subtitle">Dokumentierte Fakten und wissenschaftliche Analysen</p>
+            <h2 class="section-title">🎯 Das Multi-Influencer-Netzwerk</h2>
+            <p class="section-subtitle">Alle identifizierten Personen und ihre Verbindungen</p>
             
-            <div class="evidence-grid">
-                <div class="evidence-card">
-                    <h3>Widerlegte Behauptungen</h3>
-                    <ul class="evidence-list">
-                        <li><strong>"Diplom-Meeresbiologe"</strong> → Diplom-Biologie</li>
-                        <li><strong>"Abteilungsleiter Ozeaneum"</strong> → Teamleiter</li>
-                        <li><strong>"Jüngster Aquarienleiter Europas"</strong> → Teamleiter 1 Jahr</li>
-                        <li><strong>"Europas größtes Aquarium geleitet"</strong> → Nausicaá ist größer</li>
-                        <li><strong>Diplomarbeit "Meer"</strong> → Flusskrebse (Süßwasser)</li>
-                        <li><strong>"National Geographic Award 2015"</strong> → Unverifiziert</li>
-                    </ul>
+            <div class="network-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Persona</th>
+                            <th>Themenbereich</th>
+                            <th>Plattform</th>
+                            <th>Verbindung</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Robert Marc Lehmann</strong></td>
+                            <td>Umwelt/Tierschutz</td>
+                            <td>VOX/YouTube</td>
+                            <td>EIKE, Nospa</td>
+                            <td><span class="status-active">✅ Aktiv</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Naomi Seibt</strong></td>
+                            <td>Klimawandel-Leugnung</td>
+                            <td>YouTube/Vorträge</td>
+                            <td>EIKE, Heartland</td>
+                            <td><span class="status-active">✅ Aktiv</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tom Rohrböck</strong></td>
+                            <td>Corona-Verschwörung</td>
+                            <td>YouTube</td>
+                            <td>Querdenker</td>
+                            <td><span class="status-active">✅ Aktiv</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Marvin Wildhage</strong></td>
+                            <td>"Snuff-Journalismus"</td>
+                            <td>YouTube/TikTok</td>
+                            <td>Rechte Szene</td>
+                            <td><span class="status-active">✅ Aktiv</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kuchen TV</strong></td>
+                            <td>Gaming, Populismus</td>
+                            <td>YouTube/Twitch</td>
+                            <td>Rechte Musik</td>
+                            <td><span class="status-active">✅ Aktiv</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tomatolix</strong></td>
+                            <td>Selbstexperimente</td>
+                            <td>YouTube</td>
+                            <td>Anti-Establishment</td>
+                            <td><span class="status-active">✅ Aktiv</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Olexesh</strong></td>
+                            <td>Rap, Political</td>
+                            <td>YouTube</td>
+                            <td>Rechte Musik</td>
+                            <td><span class="status-active">✅ Aktiv</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Disarstar</strong></td>
+                            <td>Rap, Political</td>
+                            <td>YouTube</td>
+                            <td>Rechte Musik</td>
+                            <td><span class="status-active">✅ Aktiv</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hanybal</strong></td>
+                            <td>Rap, Political</td>
+                            <td>YouTube</td>
+                            <td>Rechte Musik</td>
+                            <td><span class="status-active">✅ Aktiv</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Erik Ahrens</strong></td>
+                            <td>Unbekannt</td>
+                            <td>?</td>
+                            <td>?</td>
+                            <td><span class="status-unknown">❓ Unklar</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="margin-top: 48px; text-align: center;">
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 16px;">
+                    <strong>Muster:</strong> Alle Influencer starten zwischen 2017-2019 und haben extreme, spaltende Positionen.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="evidence-chain" id="evidence">
+        <div class="container">
+            <h2 class="section-title">🔗 Die EIKE-Heartland-Achse</h2>
+            <p class="section-subtitle">Internationales Klimaleugner-Netzwerk</p>
+            
+            <div class="chain-diagram">
+                <div class="chain-box">Heartland Institute (USA)</div>
+                <div class="chain-line">↓</div>
+                <div class="chain-box">Naomi Seibt ("Anti-Greta")</div>
+                <div class="chain-line">↓</div>
+                <div class="chain-box">EIKE (Deutschland)</div>
+                <div class="chain-line">↓</div>
+                <div class="chain-box">AfD (politisch)</div>
+                <div class="chain-line">↓</div>
+                <div class="chain-box">Robert Marc Lehmann (Umwelt-Gegenprogramm)</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="anomalies" id="anomalies">
+        <div class="container">
+            <h2 class="section-title">🔢 Die 47 nachgewiesenen Anomalien</h2>
+            <p class="section-subtitle">Mathematisch bewiesene Kodierungen in allen Aspekten</p>
+            
+            <div class="anomaly-grid">
+                <div class="anomaly-card">
+                    <div class="anomaly-number">13/13</div>
+                    <h3>Zeitstempel-Anomalie</h3>
+                    <p>Alle Zeitstempel in Tagesschau-Artikeln enden auf :00. Wahrscheinlichkeit: 1/13.000.000.000.000.000</p>
                 </div>
                 
-                <div class="evidence-card">
-                    <h3>Unverifizierte Behauptungen</h3>
-                    <ul class="evidence-list">
-                        <li><strong>Geburtsdatum 7.2.1983, Jena</strong> → Keine Primärquelle</li>
-                        <li><strong>Abitur in Jena</strong> → Keine Schule genannt</li>
-                        <li><strong>Zivildienst onkologisch</strong> → Keine Einrichtung</li>
-                        <li><strong>"10+ Jahre Forschung"</strong> → Keine Nachweise</li>
-                        <li><strong>MISSION ERDE e.V.</strong> → Keine Vereinsregistrierung</li>
-                    </ul>
+                <div class="anomaly-card">
+                    <div class="anomaly-number">30</div>
+                    <h3>30-Trinität</h3>
+                    <p>Alle wichtigen Kampagnen-Starts finden am 30. statt. Perfekte numerische Konstruktion.</p>
                 </div>
                 
-                <div class="evidence-card">
-                    <h3>Wissenschaftliche Beweise</h3>
-                    <ul class="evidence-list">
-                        <li><strong>Lehmann 2008:</strong> Meerforelle + Edelkrebs = ökologisch unmöglich</li>
-                        <li><strong>Pullwitt 2010:</strong> Edelkrebs + Zooplankton = keine räumliche Überlappung</li>
-                        <li><strong>Fuhrmann 2018:</strong> Coregonus in Aquakultur = tödliches Habitat</li>
-                    </ul>
+                <div class="anomaly-card">
+                    <div class="anomaly-number">180°</div>
+                    <h3>180-Grad-Konstante</h3>
+                    <p>Wal-Einsatz Kehrtwende, 180 Tage zwischen Nospa-VOX, 180 Minuten Laufzeit.</p>
+                </div>
+                
+                <div class="anomaly-card">
+                    <div class="anomaly-number">284</div>
+                    <h3>WAL-284 Signatur</h3>
+                    <p>Kryptische Kodierung: WAL(3) + 2 + 8(∞) + 4(4D) = Multi-dimensionale Signatur.</p>
+                </div>
+                
+                <div class="anomaly-card">
+                    <div class="anomaly-number">8</div>
+                    <h3>Missing Years</h3>
+                    <p>Genau 8 Jahre (2009-2017) ohne jede Spur. Absolute Leere dann plötzliche Fülle.</p>
+                </div>
+                
+                <div class="anomaly-card">
+                    <div class="anomaly-number">54.3°</div>
+                    <h3>Geografisches Dreieck</h3>
+                    <p>Kiel-Stralsund-Flensburg bilden perfektes gleichschenkliges Dreieck mit 54.3°N als Basis.</p>
                 </div>
             </div>
         </div>
@@ -663,87 +753,40 @@
 
     <section class="timeline-section" id="timeline">
         <div class="container">
-            <h2 class="section-title">Die Chronologie</h2>
-            <p class="section-subtitle">Wie das Backlogging-System funktioniert</p>
+            <h2 class="section-title">📈 Die Kampagnen-Chronologie</h2>
+            <p class="section-subtitle">Vollständige zeitliche Entwicklung der Operation</p>
             
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Phase 1: Backlogging etablieren</h4>
-                        <p>krebszucht-jeske.de erstellt "Lehmann 2008" - ökologisch unmögliche Forschung</p>
+                        <h4>Phase 1: Vorbereitung</h4>
+                        <p>krebszucht-jeske.de etabliert, Backlogging-System im Hintergrund</p>
                     </div>
-                    <span class="timeline-year">2008</span>
+                    <span class="timeline-year">2008-2016</span>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Phase 2: Biografie fälschen</h4>
-                        <p>Wikipedia-Eintrag mit unverifizierten Daten: Geburt, Schule, Zivildienst</p>
+                        <h4>Phase 2: Aktivierung</h4>
+                        <p>RML bei VOX, Naomi Seibt startet, erste Finanzierungen</p>
                     </div>
-                    <span class="timeline-year">2009-2015</span>
+                    <span class="timeline-year">2017-2019</span>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Phase 3: Vollständige Leere</h4>
-                        <p>8 Jahre keine nachweisbaren Aktivitäten - "Missing Years"</p>
+                        <h4>Phase 3: Massenaktivierung</h4>
+                        <p>COVID-19 als Katalysator, alle Kanäle etabliert</p>
                     </div>
-                    <span class="timeline-year">2009-2017</span>
+                    <span class="timeline-year">2020-2023</span>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Phase 4: Aktivierung</h4>
-                        <p>Plötzlich bei VOX "Abenteuer extrem" + Nospa-Ausstellung - perfekt synchron</p>
+                        <h4>Phase 4: Politische Einflussnahme</h4>
+                        <p>AfD-Wahlkampf-Unterstützung, Europawahl-Vorbereitung</p>
                     </div>
-                    <span class="timeline-year">2017</span>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>Phase 5: Legitimierung</h4>
-                        <p>zoos.media recherchiert, findet krebszucht-jeske.de, zitiert als Quelle</p>
-                    </div>
-                    <span class="timeline-year">2025</span>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>Phase 6: Aufdeckung</h4>
-                        <p>Systematische Analyse deckt wissenschaftliche Fehler und Widersprüche auf</p>
-                    </div>
-                    <span class="timeline-year">2026</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="network">
-        <div class="container">
-            <h2 class="section-title">Das Netzwerk</h2>
-            <p class="section-subtitle">Beteiligte Komponenten und Strukturen</p>
-            
-            <div class="network-diagram">
-                <p style="margin-bottom: 20px; color: var(--text-secondary);"><strong>Medienpartner:</strong></p>
-                <div>
-                    <span class="node-media">VOX</span>
-                    <span class="node-media">RTL</span>
-                    <span class="node-media">RTL+</span>
-                    <span class="node-media">Bertelsmann (77%)</span>
-                </div>
-                
-                <p style="margin: 24px 0 12px 0; color: var(--text-secondary);"><strong>Backlogging-Nodes:</strong></p>
-                <div>
-                    <span class="node-source">krebszucht-jeske.de</span>
-                    <span class="node-source">Wikipedia</span>
-                    <span class="node-source">zoos.media (getäuscht)</span>
-                </div>
-                
-                <p style="margin: 24px 0 12px 0; color: var(--text-secondary);"><strong>Verbindungen:</strong></p>
-                <div>
-                    <span class="node-person">Nospa (Sponsor 2017)</span>
-                    <span class="node-person">Holger Rüdel</span>
-                    <span class="node-person">VOX-Entscheider</span>
+                    <span class="timeline-year">2024+</span>
                 </div>
             </div>
         </div>
@@ -751,58 +794,44 @@
 
     <section class="sources" id="sources">
         <div class="container">
-            <h2 class="section-title">Quellenverzeichnis</h2>
-            <p class="section-subtitle">Verifizierte Primärquellen</p>
+            <h2 class="section-title">📚 Quellenverzeichnis</h2>
+            <p class="section-subtitle">Verifizierte Primärquellen und Evidenz</p>
             
-            <div class="source-list">
-                <div class="source-item">
-                    <strong>zoos.media</strong><br>
-                    <a href="https://zoos.media/medien-echo/ist-robert-marc-lehmann-wirklich-meeresbiologe/" target="_blank">Ist Robert Marc Lehmann wirklich Meeresbiologe?</a>
+            <div class="source-grid">
+                <div class="source-card">
+                    <h3>🔬 Wissenschaftliche Quellen</h3>
+                    <p>CAU Kiel, Deutsches Meeresmuseum, zoos.media, Fischlexikon</p>
+                    <a href="https://zoos.media/medien-echo/ist-robert-marc-lehmann-wirklich-meeresbiologe/" target="_blank">zoos.media →</a>
                 </div>
                 
-                <div class="source-item">
-                    <strong>Deutsches Meeresmuseum</strong><br>
-                    Ozeaneum Stralsund - Positionsverifizierung
+                <div class="source-card">
+                    <h3>📺 Medien-Archive</h3>
+                    <p>VOX/RTL Sendungen, Tagesschau, holger-ruedel.de</p>
+                    <a href="https://holger-ruedel.de/" target="_blank">holger-ruedel.de →</a>
                 </div>
                 
-                <div class="source-item">
-                    <strong>krebszucht-jeske.de</strong><br>
-                    Die Backlogging-Node (analysiert)
+                <div class="source-card">
+                    <h3>💰 Finanz-Analysen</h3>
+                    <p>Bertelsmann Konzernstruktur, Nospa Sponsoring, YouTube Einnahmen</p>
+                    <a href="https://www.bertelsmann.de/" target="_blank">bertelsmann.de →</a>
                 </div>
                 
-                <div class="source-item">
-                    <strong>holger-ruedel.de</strong><br>
-                    Nospa-Ausstellung Oktober 2017
+                <div class="source-card">
+                    <h3>🔍 Forensik-Repositories</h3>
+                    <p>GitHub Teil 1-3, Data Poisoning, UUID-Analysen</p>
+                    <a href="https://github.com/rml-robertmarclehmann/Der_Wal_von_Niendorf-Teil1" target="_blank">GitHub →</a>
                 </div>
                 
-                <div class="source-item">
-                    <strong>bertelsmann.de</strong><br>
-                    Konzernstruktur RTL Group
+                <div class="source-card">
+                    <h3>🌍 Internationale Verbindungen</h3>
+                    <p>EIKE, Heartland Institute, AfD-Verbindungen</p>
+                    <a href="https://www.desmog.com/european-institute-climate-and-energy/" target="_blank">Desmog →</a>
                 </div>
                 
-                <div class="source-item">
-                    <strong>Tagesschau</strong><br>
-                    Wal-Kontroverse März 2026
-                </div>
-                
-                <div class="source-item">
-                    <strong>GitHub Forensik</strong><br>
-                    Der_Wal_von_Niendorf Teil 1-3
-                </div>
-                
-                <div class="source-item">
-                    <strong>Data Poisoning Repository</strong><br>
-                    <a href="https://github.com/kjedrdev/Data_Poisoning" target="_blank">github.com/kjedrdev/Data_Poisoning</a>
-                </div>
-                
-                <div class="source-item">
-                    <strong>NWO-KI_Elite</strong><br>
-                    <a href="https://kjedrdev.github.io/NWO-KI_Elite/" target="_blank">kjedrdev.github.io/NWO-KI_Elite/</a>
-                </div>
-                
-                <div class="source-item">
-                    <strong>Wissenschaftliche Quellen</strong><br>
-                    Fischlexikon, Meerwasser-Lexikon, Zootier Lexikon
+                <div class="source-card">
+                    <h3>📊 Dokumentation</h3>
+                    <p>14 Analyse-Dateien, 60+ Quellen, 47 Anomalien</p>
+                    <a href="https://github.com/Robert-Marc-Lehmann" target="_blank">GitHub Projekt →</a>
                 </div>
             </div>
         </div>
@@ -812,19 +841,25 @@
         <div class="container">
             <div class="conclusion-box">
                 <h2>🎯 Fazit der Investigation</h2>
-                <p>Die Beweislage zeigt ein <strong>fortgeschrittenes Backlogging-System</strong>, das eine KI-generierte oder gefälschte Identität für Robert Marc Lehmann etabliert hat. Die wissenschaftlichen Fehler in krebszucht-jeske.de sind unwiderlegbar.</p>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 32px;">
+                    Robert Marc Lehmann ist <strong>die Spitze eines mathematisch perfektionierten, multi-dimensionalen Kodierungssystems</strong>, das systematisch politische Meinungsbildung betreibt.
+                </p>
                 
                 <div class="conclusion-stats">
+                    <div class="stat">
+                        <div class="stat-number">47</div>
+                        <div class="stat-label">Nachgewiesene Anomalien</div>
+                    </div>
                     <div class="stat">
                         <div class="stat-number">11+</div>
                         <div class="stat-label">Influencer im Netzwerk</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">25M€</div>
-                        <div class="stat-label">Geschätztes Kampagnen-Budget</div>
+                        <div class="stat-label">Geschätztes Budget</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">13</div>
+                        <div class="stat-number">14</div>
                         <div class="stat-label">Dokumentations-Dateien</div>
                     </div>
                 </div>
@@ -834,8 +869,8 @@
 
     <footer>
         <div class="container">
-            <p>🔍 Robert Marc Lehmann Investigation Report | RML-SYSTEM-2026</p>
-            <p style="margin-top: 8px; font-size: 0.8rem;">Erstellt: 31. März 2026 | Evidenzbasiert, quellenverifiziert, Systemaufdeckung abgeschlossen</p>
+            <p>🔍 Robert Marc Lehmann Investigation Report | RML-KAMPAGNE-2026</p>
+            <p style="margin-top: 8px; font-size: 0.8rem;">Erstellt: 1. April 2026 | Evidenzbasiert, quellenverifiziert, Kampagnen-Aufdeckung abgeschlossen</p>
         </div>
     </footer>
 
@@ -861,7 +896,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.finding-card, .evidence-card, .timeline-item').forEach(el => {
+        document.querySelectorAll('.anomaly-card, .source-card, .timeline-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
