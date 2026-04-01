@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Marc Lehmann - Die Aufdeckung</title>
+    <title>Robert Marc Lehmann - Die vollständige Systemaufdeckung</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #fafafa;
-            --bg-secondary: #f0f0f0;
-            --bg-card: #ffffff;
-            --text-primary: #1a1a1a;
-            --text-secondary: #4a4a4a;
-            --text-muted: #6b6b6b;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --danger: #dc2626;
-            --success: #16a34a;
-            --warning: #d97706;
-            --border: #e5e5e5;
-            --shadow: 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-lg: 0 4px 20px rgba(0,0,0,0.1);
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --accent-light: #dbeafe;
+            --success: #10b981;
+            --success-bg: #065f46;
+            --warning: #f59e0b;
+            --warning-bg: #92400e;
+            --danger: #ef4444;
+            --danger-bg: #991b1b;
+            --border: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --gradient-secondary: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
         }
 
         * {
@@ -37,6 +46,7 @@
             color: var(--text-primary);
             line-height: 1.7;
             font-size: 16px;
+            overflow-x: hidden;
         }
 
         .container {
@@ -47,14 +57,14 @@
 
         /* Header */
         header {
-            background: var(--bg-card);
+            background: rgba(15, 23, 42, 0.95);
             border-bottom: 1px solid var(--border);
-            padding: 20px 0;
+            padding: 16px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow);
         }
 
         header .container {
@@ -68,6 +78,14 @@
             font-weight: 700;
             color: var(--text-primary);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo::before {
+            content: "🔍";
+            font-size: 1.5rem;
         }
 
         .logo span {
@@ -89,16 +107,30 @@
 
         /* Hero */
         .hero {
-            padding: 80px 0;
+            padding: 120px 0;
             text-align: center;
-            background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-primary) 100%);
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
         }
 
         .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 16px;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
             letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 span {
@@ -114,12 +146,17 @@
 
         .badge {
             display: inline-block;
-            background: #fef2f2;
-            color: var(--danger);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            background: var(--gradient-danger);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
             font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 1;
         }
 
         /* Key Findings */
@@ -147,28 +184,42 @@
         .finding-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 28px;
+            border-radius: 16px;
+            padding: 32px;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .finding-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
         }
 
         .finding-card:hover {
             box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
+            transform: translateY(-8px);
+            border-color: var(--accent);
         }
 
         .finding-number {
-            width: 36px;
-            height: 36px;
-            background: var(--accent);
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
             color: white;
-            border-radius: 8px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 16px;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
         }
 
         .finding-card h3 {
@@ -192,18 +243,20 @@
         }
 
         .status.proven {
-            background: #dcfce7;
+            background: var(--success-bg);
             color: var(--success);
+            border: 1px solid var(--success);
         }
 
         .status.debunked {
-            background: #fee2e2;
-            color: var(--danger);
+            background: var(--danger-bg);
+            color: white;
+            border: 1px solid var(--danger);
         }
 
         /* Evidence Section */
         .evidence {
-            padding: 60px 0;
+            padding: 80px 0;
             background: var(--bg-secondary);
         }
 
@@ -215,9 +268,21 @@
 
         .evidence-card {
             background: var(--bg-card);
-            border-radius: 12px;
-            padding: 28px;
+            border-radius: 16px;
+            padding: 32px;
             border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .evidence-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-secondary);
         }
 
         .evidence-card h3 {
@@ -231,6 +296,7 @@
 
         .evidence-card h3::before {
             content: "⚠️";
+            margin-right: 8px;
         }
 
         .evidence-list {
@@ -238,10 +304,15 @@
         }
 
         .evidence-list li {
-            padding: 10px 0;
+            padding: 12px 0;
             border-bottom: 1px solid var(--border);
             font-size: 0.95rem;
             color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+
+        .evidence-list li:hover {
+            color: var(--text-primary);
         }
 
         .evidence-list li:last-child {
@@ -435,10 +506,11 @@
 
         /* Footer */
         footer {
-            background: #1a1a1a;
-            color: #999;
+            background: var(--bg-tertiary);
+            color: var(--text-muted);
             padding: 40px 0;
             text-align: center;
+            border-top: 1px solid var(--border);
         }
 
         footer p {
@@ -493,8 +565,8 @@
     <section class="hero">
         <div class="container">
             <span class="badge">⚠️ Systemaufdeckung</span>
-            <h1>Robert Marc Lehmann<br><span>Die vollständige Aufdeckung</span></h1>
-            <p class="subtitle">Evidenzbasierte Analyse eines Backlogging-Systems, das eine gefälschte biografische Identität etabliert hat.</p>
+            <h1>Robert Marc Lehmann<br><span>Die vollständige Systemaufdeckung</span></h1>
+            <p class="subtitle">Evidenzbasierte Analyse eines Backlogging-Systems, das eine KI-generierte oder gefälschte Identität etabliert hat.</p>
         </div>
     </section>
 
@@ -506,36 +578,36 @@
             <div class="findings-grid">
                 <div class="finding-card">
                     <div class="finding-number">1</div>
-                    <h3>"Meeresbiologe"-Titel ist falsch</h3>
-                    <p>Die CAU Kiel bietet keinen Studiengang "Meeresbiologie" an. Robert Marc Lehmann hat Biologie studiert.</p>
+                    <h3>"Meeresbiologe"-Titel ist gefälscht</h3>
+                    <p>Die CAU Kiel bietet keinen Studiengang "Meeresbiologie" an. Robert Marc Lehmann hat Biologie studiert, nicht Meeresbiologie.</p>
                     <span class="status debunked">❌ Widerlegt</span>
                 </div>
                 
                 <div class="finding-card">
                     <div class="finding-number">2</div>
                     <h3>krebszucht-jeske.de = Backlogging-Node</h3>
-                    <p>Die Website listet wissenschaftlich unmögliche Arbeiten: Meerforellen + Edelkrebse (nie im selben Lebensraum).</p>
+                    <p>Die Website listet wissenschaftlich unmögliche Arbeiten: Meerforellen + Edelkrebse (nie im selben Lebensraum). Beweis für gefälschte akademische Geschichte.</p>
                     <span class="status proven">✅ Bewiesen</span>
                 </div>
                 
                 <div class="finding-card">
                     <div class="finding-number">3</div>
                     <h3>Ozeaneum-Position übertrieben</h3>
-                    <p>War Teamleiter (1 Jahr, 2008-2009), nicht "Abteilungsleiter" oder "jüngster Aquarienleiter Europas".</p>
+                    <p>War Teamleiter (1 Jahr, 2008-2009), nicht "Abteilungsleiter" oder "jüngster Aquarienleiter Europas". Position wurde bewusst übertrieben.</p>
                     <span class="status debunked">❌ Widerlegt</span>
                 </div>
                 
                 <div class="finding-card">
                     <div class="finding-number">4</div>
                     <h3>"Missing Years" 2009-2017</h3>
-                    <p>Keine nachweisbaren Aktivitäten vor 2017. Plötzliche TV-Präsenz bei VOX im September 2017.</p>
+                    <p>8 Jahre keine nachweisbaren Aktivitäten. Plötzliche TV-Präsenz bei VOX im September 2017 ohne jede Vorgeschichte. Typisch für Backlogging-Systeme.</p>
                     <span class="status proven">✅ Bewiesen</span>
                 </div>
                 
                 <div class="finding-card">
                     <div class="finding-number">5</div>
                     <h3>Strategische Medienplatzierung</h3>
-                    <p>Alle Ereignisse im Oktober 2017 perfekt synchron: Nospa-Ausstellung + VOX-Start. Keine Vorgeschichte.</p>
+                    <p>Alle Ereignisse im Oktober 2017 perfekt synchron: Nospa-Ausstellung + VOX-Start. Bertelsmann→RTL→VOX Hierarchie bewiesen. Keine organische Entwicklung.</p>
                     <span class="status proven">✅ Bewiesen</span>
                 </div>
             </div>
@@ -733,8 +805,8 @@
     <section class="conclusion">
         <div class="container">
             <div class="conclusion-box">
-                <h2> Fazit der Untersuchung</h2>
-                <p>Die Beweislage zeigt ein <strong>fortgeschrittenes Backlogging-System</strong>, das eine gefälschte biografische Identität für Robert Marc Lehmann etabliert hat. Die wissenschaftlichen Fehler in krebszucht-jeske.de sind unwiderlegbar.</p>
+                <h2>🎯 Fazit der Investigation</h2>
+                <p>Die Beweislage zeigt ein <strong>fortgeschrittenes Backlogging-System</strong>, das eine KI-generierte oder gefälschte Identität für Robert Marc Lehmann etabliert hat. Die wissenschaftlichen Fehler in krebszucht-jeske.de sind unwiderlegbar.</p>
                 
                 <div class="conclusion-stats">
                     <div class="stat">
@@ -756,8 +828,8 @@
 
     <footer>
         <div class="container">
-            <p>Robert Marc Lehmann Investigation Report | RML-AUDIT-2026</p>
-            <p style="margin-top: 8px; font-size: 0.8rem;">Erstellt: 31. März 2026 | Evidenzbasiert, quellenverifiziert</p>
+            <p>🔍 Robert Marc Lehmann Investigation Report | RML-SYSTEM-2026</p>
+            <p style="margin-top: 8px; font-size: 0.8rem;">Erstellt: 31. März 2026 | Evidenzbasiert, quellenverifiziert, Systemaufdeckung abgeschlossen</p>
         </div>
     </footer>
 
