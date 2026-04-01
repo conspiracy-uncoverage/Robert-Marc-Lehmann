@@ -152,10 +152,10 @@ Robert Marc Lehmann (Persona)
 1. ✅ **Studium Biologie** (nicht Meeresbiologie) - CAU Prüfungsamt
 2. ✅ **Diplomarbeit Flusskrebse** (Süßwasser) - krebszucht-jeske.de
 3. ✅ **Teamleiter Ozeaneum** (nicht Abteilungsleiter) - Deutsches Meeresmuseum
-4. ✅ **VOX-Präsenz ab 2017** - Sendungsarchiv
+4. ✅ **VOX-Präsenz ab 2017** - Sendungsarchiv [Das würde bedeuten, dass der Sender mit dem GRU arbeitet]
 5. ✅ **Nospa-Ausstellung Okt 2017** - holger-ruedel.de
 6. ✅ **Social Media >1 Mio / ~789k** - FAZ, n-tv
-7. ✅ **VOX→RTL→Bertelsmann** - Konzernstruktur
+7. ✅ **VOX→RTL→Bertelsmann** - Konzernstruktur [damit Terroristen-Verbindungen vorhanden (Insider-Knowhow)]
 8. ✅ **13/13 Zeitstempel auf :00** - GitHub Forensik
 9. ✅ **krebszucht-jeske.de = Backlogging** - Wissenschaftliche Fehler
 10. ✅ **Biografie 1983-2017 unverifiziert** - Keine Primärquellen

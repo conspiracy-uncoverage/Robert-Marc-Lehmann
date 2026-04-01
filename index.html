@@ -9,29 +9,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-tertiary: #334155;
-            --bg-card: #1e293b;
-            --bg-card-hover: #334155;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --accent: #3b82f6;
-            --accent-hover: #60a5fa;
-            --accent-light: #dbeafe;
+            --bg-primary: #1a0505;
+            --bg-secondary: #2d0808;
+            --bg-tertiary: #400a0a;
+            --bg-card: #2d0808;
+            --bg-card-hover: #400a0a;
+            --text-primary: #f8f8f8;
+            --text-secondary: #e8e8e8;
+            --text-muted: #b8b8b8;
+            --accent: #dc2626;
+            --accent-hover: #ef4444;
+            --accent-light: #fef2f2;
             --success: #10b981;
             --success-bg: #065f46;
             --warning: #f59e0b;
             --warning-bg: #92400e;
-            --danger: #ef4444;
+            --danger: #dc2626;
             --danger-bg: #991b1b;
-            --border: #334155;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
-            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            --gradient-secondary: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-            --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            --border: #400a0a;
+            --shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.3);
+            --shadow-lg: 0 20px 25px -5px rgba(220, 38, 38, 0.4);
+            --gradient-primary: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            --gradient-secondary: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            --gradient-danger: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
         }
 
         * {
@@ -57,7 +57,7 @@
 
         /* Header */
         header {
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(26, 5, 5, 0.95);
             border-bottom: 1px solid var(--border);
             padding: 16px 0;
             position: sticky;
@@ -121,7 +121,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(220, 38, 38, 0.2) 0%, transparent 70%);
         }
 
         .hero h1 {
@@ -220,6 +220,12 @@
             font-size: 1.1rem;
             margin-bottom: 20px;
             box-shadow: var(--shadow);
+        }
+
+        .finding-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+            border-color: var(--accent);
         }
 
         .finding-card h3 {
@@ -409,13 +415,13 @@
         }
 
         .node-core {
-            background: #1e1a4a;
+            background: #991b1b;
             color: white;
         }
 
         .node-media {
-            background: #dbeafe;
-            color: #1e40af;
+            background: #fef2f2;
+            color: #991b1b;
         }
 
         .node-source {
@@ -460,7 +466,7 @@
         .conclusion {
             padding: 80px 0;
             text-align: center;
-            background: linear-gradient(180deg, var(--bg-primary) 0%, #f8fafc 100%);
+            background: linear-gradient(180deg, var(--bg-primary) 0%, #2d0808 100%);
         }
 
         .conclusion-box {
