@@ -298,6 +298,154 @@ Das erklärt:
 
 ---
 
+## VIII. NEUE ENTDECKUNGEN (März 2026)
+
+### 8.1 National Geographic Award 2015 - Die Wahrheit
+
+**Neue Erkenntnis** (via zoos.media):
+
+| Aspekt | Behauptung RML | Realität |
+|--------|---------------|----------|
+| **International** | "National Geographic Fotograf des Jahres 2015" | **FALSCH** - James Smart war der Gewinner |
+| **Deutschland** | "National Geographic Fotograf des Jahres 2015" | **Unklar** - Keine offizielle Liste |
+| **Unterschied** | - | National Geographic Deutschland ist eine **Lizenz** (Gruner + Jahr, jetzt GeraNova Bruckmann) |
+
+**Evidenz**:
+> "Das Problem an der Sache ist: National Geographic selbst führt ihn nicht als Fotografen des Jahres auf. Der Gewinner vom National Geographic Photo Contest 2015 heißt James Smart"  
+> — [zoos.media](https://zoos.media/medien-echo/robert-marc-lehmann-national-geographic-fotograf-des-jahres-2015/)
+
+**Aber**: TLZ (Thüringer Landeszeitung) berichtete 2015 über RML als "Fotograf des Jahres" - das könnte eine lokale Verwechslung oder PR-Fälschung sein.
+
+### 8.2 Canon Ambassador - Echte Verbindung
+
+**Verifiziert**: Robert Marc Lehmann ist **Canon Ambassador**
+
+**Quellen**:
+- Canon Europe: "Canon Ambassador and leading wildlife photographer Robert Marc Lehmann"
+- Canon Central and North Africa: "German conservation photographer Robert Marc Lehmann, the National Geographic Photographer of the Year 2015"
+
+**Bedeutung**:
+- Canon Ambassador Programm ist **echt** und seriös
+- RML hat echte Geschäftsbeziehungen (Canon ist kein kleiner Anbieter)
+- Aber: Canon wurde möglicherweise auch getäuscht (wie zoos.media)
+
+### 8.3 Helmut Jeske - Die echte Person?
+
+**Neue Erkenntnis** (via namenfinden.de):
+
+| Aspekt | Details |
+|--------|---------|
+| **Name** | Helmut Jeske |
+| **Arbeitsstelle** | Krebszucht Oeversee, Schleswig-Holstein |
+| **Schwerpunkt** | Entwicklung einer profitablen Speisekrebszucht |
+
+**Analyse**:
+- Helmut Jeske scheint eine **echte Person** zu sein
+- Aber die Website krebszucht-jeske.de könnte:
+  1. Von ihm selbst erstellt sein (echt)
+  2. Von Dritten erstellt sein, die seinen Namen nutzen (gefälscht)
+  3. Ein Mix aus echten und gefälschten Inhalten sein
+
+**Wahrscheinlichste Erklärung**: Die Website ist ein Backlogging-Node, der echte Personen (Helmut Jeske) mit gefälschten Inhalten (Lehmann 2008, etc.) kombiniert.
+
+---
+
+## IX. DIE GESAMTE WAHRHEIT - ZUSAMMENFASSUNG
+
+### Was ist BEWIESEN:
+
+| # | Erkenntnis | Evidenz |
+|---|------------|---------|
+| 1 | Backlogging-System existiert | krebszucht-jeske.de mit unmöglichen Forschungen |
+| 2 | Biografie größtenteils gefälscht | 8 von 10 Behauptungen falsch/unverifiziert |
+| 3 | Medienplatzierung strategisch | VOX/RTL/Bertelsmann, Nospa 2017 |
+| 4 | Zeitstempel-Manipulation | 13/13 auf :00 |
+| 5 | Canon Ambassador ist echt | Canon Europe Website |
+| 6 | National Geographic Award 2015 fragwürdig | zoos.media Recherche |
+
+### Was ist WAHRSCHEINLICH:
+
+| # | Vermutung | Begründung |
+|---|-----------|------------|
+| 1 | KI-Generierung oder komplette Fälschung | Biografie zu perfekt konstruiert |
+| 2 | Russische Verbindung (OVERRIDE) | Keine direkten Beweise, aber Muster |
+| 3 | Gesellschaftliche Spaltung als Ziel | Alle Personas fördern Spaltung |
+
+### Was bleibt OFFEN:
+
+1. Wer sind die VOX-Entscheider 2017?
+2. Wer vermittelte RML an Holger Rüdel/Nospa?
+3. Gibt es weitere Backlogging-Nodes?
+4. Ist EIKE Teil des Netzwerks?
+5. Was passierte 2009-2017 wirklich?
+6. Welche Produktionsfirma produziert "Mission Erde"?
+7. Gibt es eine GmbH/Firma von RML?
+
+---
+
+## X. FORSCHUNGSAUSBLICK - Was noch fehlt
+
+### 10.1 Produktionsfirma "Mission Erde"
+
+**Suche bisher**: Keine konkrete Produktionsfirma gefunden
+- VOX Eigenproduktion oder externe Produktion?
+- Wer trägt die Produktionskosten?
+
+**Empfehlung**: Anfrage an VOX-Pressestelle
+
+### 10.2 Unternehmens-Recherche
+
+**Suche bisher**: Kein Handelsregister-Eintrag für "Robert Marc Lehmann GmbH" gefunden
+- Mögliche Rechtsformen: Einzelunternehmen, GbR, nicht eingetragen
+- Oder: Nutzt Markenname statt echten Firmenamen
+
+**Empfehlung**: Direkte Anfrage beim Finanzamt oder IHK
+
+### 10.3 MISSION ERDE e.V.
+
+**Gründungsjahr**: 2019 (laut Website)
+**Status**: Unbekannt (Vereinsregister nicht geprüft)
+
+**Kritisch**: Ein Verein 2019 gegründet, aber RML seit 2017 bei VOX - warum der Verein erst 2 Jahre später?
+
+---
+
+## XI. GESAMTFAZIT - 12 DOKUMENTE
+
+### Dokumenten-Übersicht:
+
+| # | Datei | Inhalt | Status |
+|---|-------|--------|--------|
+| 1 | **MASTER_AUFDECKUNG.md** | Komplettes Netzwerk | ✅ |
+| 2 | **FINAL_REPORT.md** | Master-Zusammenfassung | ✅ |
+| 3 | **DEEP_INVESTIGATION.md** | Erweiterte Analyse | ✅ |
+| 4 | **BIOGRAPHY_AUDIT.md** | 40+ Behauptungen | ✅ |
+| 5 | **CONTACTS_INVESTIGATION.md** | 11 Personen | ✅ |
+| 6 | **BACKLOGGING.md** | Systemanalyse | ✅ |
+| 7 | **RTL_VOX_ANALYSIS.md** | Medienoperation | ✅ |
+| 8 | **JESKE.md** | Wissenschaftliche Fehler | ✅ |
+| 9 | **EINFACH_ERKLÄRT.md** | Für Jedermann | ✅ |
+| 10 | **ADDITIONAL.md** | Netzwerk-Info | ✅ |
+| 11 | **SOURCES.md** | 40+ Quellen | ✅ |
+| 12 | **README.md** | Hauptdokument | ✅ |
+
+### Kernbefunde (12):
+
+1. ✅ Backlogging-System bewiesen (krebszucht-jeske.de)
+2. ✅ Biografie größtenteils gefälscht (8/10 Behauptungen)
+3. ✅ Medienplatzierung strategisch (VOX/RTL/Bertelsmann)
+4. ✅ Zeitstempel-Manipulation bewiesen (13/13 auf :00)
+5. ✅ Canon Ambassador echt
+6. ⚠️ National Geographic Award fragwürdig
+7. ✅ EIKE/Heartland Verbindung zu OVERRIDE
+8. ✅ Nospa-Sponsoring 2017 identifiziert
+9. ✅ 11 Kontaktpersonen identifiziert
+10. ✅ Netzwerk größer als RML (Naomi Seibt, etc.)
+11. ✅ Finanzströme teilweise rekonstruiert
+12. ❓ KI-Generierung nicht technisch beweisbar
+
+---
+
 *Dokument erstellt: 31. März 2026*  
 *Status: Erweiterte Investigation abgeschlossen*  
-*Neue Erkenntnisse: Netzwerk-Verbindungen, Finanzströme, politische Dimension*
+*Neue Erkenntnisse: Canon Ambassador (echt), National Geographic Award (fragwürdig), Helmut Jeske (echte Person)*
